@@ -1,0 +1,9 @@
+/* 새 배경 자체의 명암을 살립니다. 하단 대화창 그라데이션은 기존 UI가 담당합니다. */
+.scenery { filter: brightness(1.06) saturate(.96); }
+.title-mode .scenery { filter: brightness(.85) saturate(.9); }
+.memory-haze .scenery { filter: brightness(.82) saturate(.65); }
+.time-fracture .scenery { filter: saturate(.06) brightness(.82); }
+.app[data-background="hallDusk"] .scenery,
+.app[data-background="guestroomDusk"] .scenery,
+.app[data-background="doorstepDusk"] .scenery { filter: brightness(1) saturate(.94); }
+.app.memory-haze[data-background="hallDusk"] .scenery { filter: brightness(.86) saturate(.7); }

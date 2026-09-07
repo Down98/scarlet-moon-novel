@@ -1,0 +1,15 @@
+/* 추가된 음향 메뉴와 긴 선택지가 작은 화면에서도 겹치지 않도록 보정합니다. */
+@media(max-width:760px) and (max-height:740px) and (orientation:portrait) {
+  .title-screen { top: 12%; }
+  .title-prologue { margin: 17px 0 13px; }
+  .title-rule { margin: 14px 0; }
+  .title-actions { margin-top: 18px; }
+  .sound-hint { display: none; }
+}
+@media(max-height:520px) and (orientation:landscape) {
+  .app { min-height: 100svh; }
+  .choices { top: 64px; bottom: 180px; align-content: start; overflow-y: auto; overscroll-behavior: contain; }
+  .choices button { flex-shrink: 0; }
+  .dialogue { max-height: 118px; overflow-y: auto; }
+  .game-toolbar { margin-top: 5px; }
+}

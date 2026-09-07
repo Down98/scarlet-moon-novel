@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/* 레밀리아의 뒷모습과 파츄리의 전신 CG에 거리·조명 연출을 적용합니다. */
+.game-mode .portrait.full-portrait {
+  height: 85svh;
+  min-height: 0;
+  bottom: 4svh;
+}
+
+@media (max-width: 760px) {
+  .game-mode .portrait.full-portrait { height: 69svh; bottom: 22svh; }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .game-mode .portrait.full-portrait { height: 95svh; bottom: -5svh; }
+}
+.game-mode .portrait[data-entrance] {
+  transform-origin: 50% 55%;
+  mask-image: linear-gradient(to bottom, #000 76%, transparent 100%);
+}
+
+.game-mode .portrait[data-entrance="silhouette"] {
+  transform: translateX(-50%) scale(.64);
+  filter: brightness(0) drop-shadow(0 0 9px rgba(131, 150, 223, .3));
+  transition: opacity .35s ease;
+}
+
+.game-mode .portrait[data-entrance="reveal"] {
+  transform: translateX(-50%) scale(1);
+  filter: brightness(1) drop-shadow(0 10px 40px rgba(14, 8, 22, .3));
+  transition:
+    opacity .22s ease,
+    transform 3.2s cubic-bezier(.25, .1, .25, 1),
+    filter 3.2s cubic-bezier(.42, 0, .58, 1);
+}
+
+/* 불러오기와 화면 이탈 시 지난 연출을 재생하지 않습니다. */
+.game-mode .portrait.entrance-instant {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-mode .portrait[data-entrance] {
+    transition: none;
+  }
+}

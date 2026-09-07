@@ -1,0 +1,12 @@
+.audio-settings { border-top: 1px solid var(--border); margin-top: 24px; padding-top: 10px; }
+.audio-settings h3 { font: 20px var(--serif); color: var(--gold); }
+.audio-settings .setting-row { padding: 15px 0; }
+.audio-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.audio-button { padding: 10px 16px; border: 1px solid var(--border); font-size: 12px; }
+.audio-button:hover { background: #a9688620; }
+.sound-toggle { position: absolute; z-index: 8; top: 54px; right: 4%; font-size: 11px; letter-spacing: .05em; padding: 9px 13px; background: #13101ccc; border: 1px solid var(--border); }
+.game-mode .sound-toggle { top: 88px; right: 3.8%; }
+.sound-toggle[aria-pressed="true"] { color: var(--muted); }
+.sound-hint { font-size: 10px; color: var(--muted); line-height: 1.7; margin-top: 15px; }
+@media(max-width:760px) { .sound-toggle { top: 40px; right: 5%; } .game-mode .sound-toggle { top: 70px; } .sound-hint { max-width: 220px; } }
+@media(max-height:520px) and (orientation:landscape) { .game-mode .sound-toggle { top: 57px; font-size: 9px; padding: 5px 8px; } .sound-hint { display: none; } }

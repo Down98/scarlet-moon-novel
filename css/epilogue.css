@@ -1,0 +1,40 @@
+/* 신사의 세전함을 가리지 않는 인물 배치와 하늘 위의 열린 결말. */
+.app[data-background="shrine"] .portrait.reimu-portrait {
+  left: 35%; height: 82svh; bottom: 6svh;
+}
+.app.sky-shot .scenery { transition: opacity 1.8s ease, filter 1.2s ease; }
+.app.sky-shot .scenery.background-instant { transition: none; }
+.app.sky-shot .vignette { opacity: .28; }
+.app.sky-shot .chapter-mark { display: none; }
+.app.sky-finale .ending-screen { background: none; backdrop-filter: none; }
+.app.sky-finale .ending-card {
+  width: min(620px, 90vw); max-width: none; border: none; background: none;
+  box-shadow: none; backdrop-filter: none; text-shadow: 0 2px 16px #11152f;
+}
+.app.sky-finale .ending-card > .eyebrow,
+.app.sky-finale .ending-moon,
+.app.sky-finale .ending-rule { display: none; }
+.app.sky-finale #ending-continuation {
+  font: italic clamp(24px, 3.4vw, 44px)/1.4 Georgia, serif;
+  white-space: nowrap;
+  letter-spacing: .03em; margin: 0 0 44px; color: #fff4e7;
+  animation: sky-letter 2s ease both;
+}
+.app.sky-finale #ending-title { font-size: 19px; margin: 12px 0; }
+.app.sky-finale #ending-description { font-size: 13px; line-height: 1.8; }
+.app.sky-finale .ending-note { color: #e3d9ea; }
+.app.sky-finale .start-button { background: #14172d99; }
+@keyframes sky-letter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (max-width: 760px) {
+  .app[data-background="shrine"] .portrait.reimu-portrait { left: 37%; height: 64svh; bottom: 24svh; }
+  .app.sky-finale #ending-continuation { margin-bottom: 28px; }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .app[data-background="shrine"] .portrait.reimu-portrait { height: 96svh; bottom: -5svh; }
+  .app.sky-finale #ending-continuation { margin: 0 0 10px; font-size: 30px; }
+  .app.sky-finale .ending-card { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app.sky-shot .scenery { transition: none; }
+  .app.sky-finale #ending-continuation { animation: none; }
+}

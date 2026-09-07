@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+.scenery {
+  transition: opacity .7s ease, filter 1.2s ease, transform 2s ease;
+}
+
+.scenery.background-instant {
+  transition: none;
+}
+
+.gallery-heading {
+  color: var(--gold);
+  font: 18px var(--serif);
+  margin: 25px 0 16px;
+}
+
+/* 사쿠야의 정사각형 상반신은 모자 위쪽 여백이 적어 조금 낮게 둡니다. */
+.game-mode .portrait.square-portrait.maid-portrait {
+  height: 83vh;
+  bottom: 2vh;
+}
+
+/* 새 1024 × 1024 표정의 얼굴 위치를 기존 세로 스프라이트와 맞춥니다. */
+.game-mode .portrait.square-portrait {
+  height: 88vh;
+  min-height: 0;
+  bottom: 4vh;
+  mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+}
+
+.dark-scene .scenery {
+  filter: brightness(.06) saturate(.3);
+}
+
+.bad-ending .ending-card {
+  background: linear-gradient(145deg, #25171d, #0c0d16);
+}
+
+.bad-ending .ending-moon {
+  color: #93717b;
+}
+
+@media (max-width: 760px) {
+  .game-mode .portrait.square-portrait {
+    height: 70svh;
+    bottom: 22svh;
+  }
+  .game-mode .portrait.square-portrait.maid-portrait {
+    height: 65svh;
+    bottom: 22svh;
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .game-mode .portrait.square-portrait {
+    height: 100vh;
+    bottom: -6vh;
+  }
+  .game-mode .portrait.square-portrait.maid-portrait {
+    height: 94vh;
+    bottom: -6vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scenery { transition: none; }
+}

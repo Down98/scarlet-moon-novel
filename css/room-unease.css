@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+/* 원본은 바꾸지 않고, 등불 반사로도 보일 만큼 약한 붉은 기운만 한 번 스칩니다. */
+.game-mode.room-unease[data-background="guestroom"] .scenery::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse var(--glimpse-width, 12vw) var(--glimpse-height, 5vh) at var(--glimpse-x, 64%) var(--glimpse-y, 65%), rgba(137, 14, 28, .38), transparent 80%);
+  opacity: 0;
+  animation: uncertain-red 2.2s ease-in-out 1;
+}
+
+@keyframes uncertain-red {
+  0%, 100% { opacity: 0; }
+  28%, 48% { opacity: .65; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-mode.room-unease[data-background="guestroom"] .scenery::after {
+    animation: none;
+    opacity: .16;
+  }
+}

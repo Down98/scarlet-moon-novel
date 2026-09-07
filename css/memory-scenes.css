@@ -1,0 +1,18 @@
+/* 기억은 겹쳐 보이되, 새 얼굴을 옛 인간의 얼굴로 교체하지 않습니다. */
+.memory-haze .scenery { filter: brightness(.4) saturate(.38); }
+.memory-haze .portrait { filter: sepia(.13) drop-shadow(0 0 28px #9e7ca944); }
+.time-fracture .dust { animation-play-state: paused; }
+.time-fracture .scenery { filter: saturate(.05) brightness(.45); }
+.scarlet-seal::after {
+  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 45%, transparent 20%, #bc20442c 48%, transparent 68%);
+  animation: seal-light 1.3s ease-out both;
+}
+@keyframes seal-light { from { opacity: .9; transform: scale(.8); } to { opacity: 0; transform: scale(1.12); } }
+.title-mode .portrait.square-portrait { height: 87svh; min-height: 0; bottom: -1svh; left: 76%; mask-image: linear-gradient(#000 70%, transparent 98%); }
+@media(max-width:760px) {
+  .title-mode .portrait.square-portrait { height: 60svh; min-height: 460px; bottom: 16svh; left: 65%; animation: none; opacity: .68; }
+  .title-mode::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg,#09091570,transparent 85%); }
+}
+@media(max-height:520px) and (orientation:landscape) { .title-mode .portrait.square-portrait { height: 108svh; min-height: 0; bottom: -20svh; } }
+@media(prefers-reduced-motion:reduce) { .scarlet-seal::after { animation: none; opacity: .08; } }

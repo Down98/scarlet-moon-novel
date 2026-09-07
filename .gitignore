@@ -1,0 +1,24 @@
+# Publish only the playable site and its public instructions.
+/*
+!/.gitignore
+!/.gitattributes
+!/.nojekyll
+!/README.md
+!/index.html
+!/css/
+!/js/
+!/assets/
+!/docs/
+/docs/*
+!/docs/PLAYER_README.txt
+/assets/*
+!/assets/레밀리아_new/
+!/assets/사쿠야_new/
+!/assets/파츄리/
+!/assets/레이무/
+!/assets/audio/
+!/assets/backgrounds/
+*.tmp
+*.log
+.DS_Store
+Thumbs.db

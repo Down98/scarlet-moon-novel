@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111020">
+  <title>붉은 달 아래, 길을 잃다 — 레밀리아</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌙%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/entrance.css">
+  <link rel="stylesheet" href="css/story-presentation.css">
+  <link rel="stylesheet" href="css/room-unease.css">
+  <link rel="stylesheet" href="css/audio.css">
+  <link rel="stylesheet" href="css/memory-scenes.css">
+  <link rel="stylesheet" href="css/compact-layout.css">
+  <link rel="stylesheet" href="css/backgrounds.css">
+  <link rel="stylesheet" href="css/epilogue.css">
+  <script defer src="js/background-catalog.js"></script>
+  <script defer src="js/assets.js"></script>
+  <script defer src="js/story.js"></script>
+  <script defer src="js/story/00-doorstep.js"></script>
+  <script defer src="js/story/01-arrival.js"></script>
+  <script defer src="js/story/02-return.js"></script>
+  <script defer src="js/story/03-terms.js"></script>
+  <script defer src="js/story/04-midnight.js"></script>
+  <script defer src="js/story/05-reply.js"></script>
+  <script defer src="js/story/06-endings.js"></script>
+  <script defer src="js/story/07-sakuya.js"></script>
+  <script defer src="js/story/08-guestroom.js"></script>
+  <script defer src="js/story/09-employment.js"></script>
+  <script defer src="js/story/10-scarlet-memory.js"></script>
+  <script defer src="js/story/11-borrowed-voice.js"></script>
+  <script defer src="js/story/12-a-different-tomorrow.js"></script>
+  <script defer src="js/story/13-background-staging.js"></script>
+  <script defer src="js/story/14-emotional-direction.js"></script>
+  <script defer src="js/story/15-patchouli-epilogue.js"></script>
+  <script defer src="js/story/16-story-bridges.js"></script>
+  <script defer src="js/story/17-reimu-epilogue.js"></script>
+  <script defer src="js/storage.js"></script>
+  <script defer src="js/audio-cues.js"></script>
+  <script defer src="js/audio-primitives.js"></script>
+  <script defer src="js/audio-foley.js"></script>
+  <script defer src="js/audio-synth.js"></script>
+  <script defer src="js/audio.js"></script>
+  <script defer src="js/audio-panel.js"></script>
+  <script defer src="js/entrance.js"></script>
+  <script defer src="js/background.js"></script>
+  <script defer src="js/game.js"></script>
+</head>
+<body>
+  <main id="app" class="app title-mode">
+    <div class="scenery" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="dust" aria-hidden="true"></div>
+    <div class="ornament ornament-top" aria-hidden="true">✧</div>
+    <img id="portrait" class="portrait title-portrait square-portrait" src="assets/레밀리아_new/기본표정.webp" alt="레밀리아 스칼렛">
+    <button id="sound-toggle" class="sound-toggle" aria-pressed="false" aria-label="소리 켜기">♫ 소리 켜기</button>
+
+    <section id="title-screen" class="title-screen" aria-labelledby="game-title">
+      <div class="eyebrow"><span></span> TOUHOU PROJECT · FAN VISUAL NOVEL</div>
+      <p class="title-prologue">초대받지 않은 당신에게, 붉은 밤이 열린다.</p>
+      <h1 id="game-title">붉은 달 아래,<br><em>길을 잃다</em><span class="title-star">✧</span></h1>
+      <p class="english-title">A STRANGER UNDER THE SCARLET MOON</p>
+      <div class="title-rule"><span>Ⅰ</span></div>
+      <p class="title-description">길을 잘못 들었을 뿐인데,<br>운명을 다루는 소녀와 마주쳐 버렸다.</p>
+      <nav class="title-actions" aria-label="시작 메뉴">
+        <button id="start" class="start-button"><span>이야기 시작</span><span aria-hidden="true">↗</span></button>
+        <button id="continue" class="text-button" disabled>이어하기 <span>CONTINUE</span></button>
+        <div class="secondary-actions"><button data-panel="gallery">표정 갤러리</button><span>·</span><button data-panel="settings">환경 설정</button></div>
+        <p class="sound-hint">이야기를 시작하면 음악이 흐릅니다.<br>환경 설정에서 소리별 음량을 조절하세요.</p>
+      </nav>
+    </section>
+    <aside id="title-caption" class="title-caption"><span>REMILIA SCARLET</span><p>레밀리아 스칼렛</p><small>홍마관의 주인 · 영원히 붉은 어린 달</small></aside>
+    <footer id="title-footer" class="title-footer"><span>東方 PROJECT <i>／</i> 비공식 팬 작품</span><span>다섯 장의 밤, 네 가지 결말 <b>✦</b></span></footer>
+
+    <section id="game-screen" class="game-screen" aria-label="이야기" hidden>
+      <header class="game-header"><button id="home" aria-label="타이틀로 돌아가기">☾ <span>붉은 달 아래, 길을 잃다</span></button><div><span class="location-dot"></span> <span id="location">홍마관 · 대홀</span> <span class="header-divider">／</span><span id="chapter">01. 뜻밖의 방문자</span></div><button data-panel="settings" aria-label="환경 설정">⚙</button></header>
+      <div class="chapter-mark" aria-hidden="true"><span id="chapter-number">01</span><small>SCARLET<br>ENCOUNTER</small></div>
+      <div id="choices" class="choices" aria-label="대답 선택" hidden></div>
+      <div class="dialogue-wrap" id="dialogue-wrap">
+        <div class="speaker-row"><span class="speaker-line"></span><h2 id="speaker">레밀리아 스칼렛</h2><span id="speaker-sub">REMILIA SCARLET</span></div>
+        <button id="dialogue" class="dialogue" aria-label="대화 계속">
+          <span class="dialogue-corner" aria-hidden="true">✦</span>
+          <span id="dialogue-text"></span><span id="next-cue" class="next-cue" aria-hidden="true">CONTINUE <b>◆</b></span>
+        </button>
+        <div id="accessible-line" class="sr-only" aria-live="polite"></div>
+        <nav class="game-toolbar" aria-label="게임 메뉴"><span class="input-hint">CLICK <i>／</i> SPACE <span>이야기 진행</span></span><div><button data-panel="log">대화 기록</button><button id="auto" aria-pressed="false">자동 <span>OFF</span></button><button data-panel="save">저장</button><button data-panel="load">불러오기</button><button id="hide-ui">UI 숨김</button><button id="fullscreen" aria-label="전체 화면">⛶</button></div></nav>
+      </div>
+      <button id="restore-ui" class="restore-ui" hidden>대화창 표시</button>
+    </section>
+
+    <section id="ending-screen" class="ending-screen" hidden aria-labelledby="ending-title"><div class="ending-card"><p id="ending-continuation" hidden>To be continued...?</p><p class="eyebrow">A NIGHT TO REMEMBER</p><span class="ending-moon" aria-hidden="true">☾</span><p id="ending-label" class="ending-label"></p><h2 id="ending-title"></h2><p id="ending-description"></p><div class="ending-rule">✧</div><p id="ending-note" class="ending-note">어쩌면, 길을 잃은 건 운명이었을지도.</p><button id="restart" class="start-button">다른 이야기 만나기 <span>↗</span></button><button id="ending-home" class="text-button">타이틀로</button></div></section>
+
+    <dialog id="panel" class="panel"><header><div><p class="eyebrow" id="panel-eyebrow">SCARLET MEMORIES</p><h2 id="panel-title"></h2></div><button id="close-panel" class="close-panel" aria-label="닫기">×</button></header><div id="panel-content"></div></dialog>
+    <div id="toast" class="toast" role="status"></div>
+    <noscript><div class="no-script">이야기를 진행하려면 브라우저의 JavaScript를 켜 주세요.</div></noscript>
+  </main>
+</body>
+</html>
