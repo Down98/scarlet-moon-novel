@@ -55,5 +55,4 @@
     }
   };
   app.dataset.background = current;
-  Object.values(window.VN_ASSETS.backgrounds).forEach(({ src }) => { const img = new Image(); img.src = src; });
 })();

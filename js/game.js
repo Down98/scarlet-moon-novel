@@ -300,12 +300,4 @@
   document.addEventListener('visibilitychange', () => { if (document.hidden) clearTimeout(autoTimer); else scheduleAuto(); });
   $('portrait').addEventListener('error', () => toast('캐릭터 이미지를 읽지 못했습니다. assets 폴더를 확인해 주세요.'));
   $('continue').disabled = !storage.data.auto;
-  // 우선 도입부만 읽습니다. 나머지는 한 장씩 순차적으로 캐시에 올립니다.
-  const preloadOrder = [...new Set(['backPose', 'backFlustered', 'backSigh', ...Object.keys(story.assets)])];
-  function preloadNext() {
-    const key = preloadOrder.shift(); if (!key) return;
-    const image = new Image(); image.onload = image.onerror = () => setTimeout(preloadNext, 100);
-    image.src = source(key);
-  }
-  preloadNext();
 })();

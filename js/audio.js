@@ -37,7 +37,7 @@
       active = 1 - active;
       players[active].pause();
       players[active].volume = 0;
-      players[active].src = `assets/audio/${desired}.wav`;
+      players[active].src = window.VN_PRELOAD?.audioSource(desired) || `assets/audio/${desired}.wav`;
       trackKeys[active] = desired;
     }
     const result = players[active].play();
@@ -45,6 +45,7 @@
       .catch(error => { if (token === generation && error.name !== 'AbortError' && error.name !== 'NotAllowedError') fail(); });
   }
   function unlock() {
+    if (document.getElementById('app').inert) return;
     if (!unlocked) unlocked = true;
     if (!context) {
       const AudioContext = window.AudioContext || window.webkitAudioContext;

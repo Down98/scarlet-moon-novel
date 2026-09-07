@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/compact-layout.css">
   <link rel="stylesheet" href="css/backgrounds.css">
   <link rel="stylesheet" href="css/epilogue.css">
+  <link rel="stylesheet" href="css/loading.css">
   <script defer src="js/background-catalog.js"></script>
   <script defer src="js/assets.js"></script>
   <script defer src="js/story.js"></script>
@@ -46,9 +47,26 @@
   <script defer src="js/entrance.js"></script>
   <script defer src="js/background.js"></script>
   <script defer src="js/game.js"></script>
+  <script defer src="js/asset-loader.js"></script>
+  <script defer src="js/loading-screen.js"></script>
 </head>
 <body>
-  <main id="app" class="app title-mode">
+  <section id="loading-screen" class="loading-screen" aria-labelledby="loading-title" aria-busy="true">
+    <div class="loading-frame">
+      <p class="loading-eyebrow">A STRANGER UNDER THE SCARLET MOON</p>
+      <div class="loading-moon" aria-hidden="true"><span>✧</span></div>
+      <p class="loading-prelude">안개 너머, 당신을 기다리는 밤.</p>
+      <h2 id="loading-title">홍마관의 문을 여는 중</h2>
+      <p id="loading-status" class="loading-status" role="status">이야기를 준비하고 있습니다.</p>
+      <div class="loading-meter"><progress id="loading-progress" max="100" value="0" aria-label="에셋 준비 진행률"></progress><span id="loading-percent" aria-hidden="true">0%</span></div>
+      <p id="loading-count" class="loading-count">배경 · 인물 · 음악</p>
+      <div id="loading-actions" class="loading-actions" hidden><button id="loading-retry">다시 불러오기</button><button id="loading-skip">일부 누락된 채로 시작</button></div>
+      <p class="loading-note">처음 방문할 때는 조금 더 걸릴 수 있습니다.<br>음악은 이야기를 시작한 뒤 흐릅니다.</p>
+    </div>
+    <span class="loading-footer" aria-hidden="true">SCARLET MEMORIES <i>✦</i> THE NIGHT AWAITS</span>
+  </section>
+  <noscript><style>#loading-screen{display:none!important}</style><div class="no-script">이야기를 진행하려면 브라우저의 JavaScript를 켜 주세요.</div></noscript>
+  <main id="app" class="app title-mode" inert aria-hidden="true">
     <div class="scenery" aria-hidden="true"></div>
     <div class="vignette" aria-hidden="true"></div>
     <div class="dust" aria-hidden="true"></div>
@@ -93,7 +111,6 @@
 
     <dialog id="panel" class="panel"><header><div><p class="eyebrow" id="panel-eyebrow">SCARLET MEMORIES</p><h2 id="panel-title"></h2></div><button id="close-panel" class="close-panel" aria-label="닫기">×</button></header><div id="panel-content"></div></dialog>
     <div id="toast" class="toast" role="status"></div>
-    <noscript><div class="no-script">이야기를 진행하려면 브라우저의 JavaScript를 켜 주세요.</div></noscript>
   </main>
 </body>
 </html>
