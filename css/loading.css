@@ -25,3 +25,4 @@
 @keyframes moon-breathe{50%{box-shadow:0 0 70px #b5516748,inset -12px -8px 20px #321a3f65}}
 @media(max-height:650px){.loading-screen{padding-top:24px}.loading-moon{width:60px;height:60px;margin:24px auto}.loading-note{margin-top:20px}.loading-footer{position:static;margin-top:24px}.loading-screen{display:flex;flex-direction:column;justify-content:center}.loading-eyebrow{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.loading-moon{animation:none}.loading-screen,#loading-progress::-webkit-progress-value{transition:none}}
+@media(max-height:520px){.loading-screen{padding:24px}.loading-eyebrow,.loading-prelude,.loading-note,.loading-footer{display:none}.loading-moon{width:42px;height:42px;margin:12px auto 22px}#loading-title{font-size:23px;margin:12px 0}.loading-status{margin-bottom:8px}.loading-actions{margin-top:12px}}
